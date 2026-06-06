@@ -771,12 +771,16 @@ body {
   margin-bottom: 14px;
 }
 .legal-section p:last-child { margin-bottom: 0; }
-.legal-section ul {
+.legal-section ul,
+.legal-steps {
   margin: 12px 0 14px 0;
   padding-left: 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.legal-steps {
+  list-style: decimal;
 }
 .legal-section li {
   font-size: 15px;
