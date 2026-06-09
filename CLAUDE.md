@@ -59,8 +59,10 @@ If a proposed feature or wording contradicts this philosophy, flag it for review
 The companion app (`zayvori-app`) is an Expo/React Native recipe app. Accurate feature set:
 
 - **Import recipes** from any URL (food blogs, social media) — paste a link or share directly from another app
+- **Paste recipe text** — clipboard import mode for copying recipe captions (e.g. TikTok, recipe cards) that can't be shared directly
 - **Smart social parsing** — extracts recipes from Instagram and TikTok captions, handles short URLs and embedded JSON-LD / OpenGraph data
-- **Create recipes manually** — title, ingredients, steps, photo
+- **Create recipes manually** — title, description, serving size, ingredients, steps, photo
+- **Serving size** — optional per-recipe serving count (1–10); hidden from viewers when set to 0
 - **My Recipes tab** — all recipes the user has created or saved
 - **Collections** — named groups of recipes (e.g. "Weeknight Dinners", "Baking")
 - **Search tab** — browse and search recipes shared by other Zayvori users (community discovery); imported recipes are private to the importing user and do not appear in Search
