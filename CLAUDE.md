@@ -85,7 +85,8 @@ The app is not yet publicly available. `index.html` is in "coming soon" mode:
 - Hero eyebrow shows "Coming Soon", CTAs say "Notify Me at Launch"
 - The download section has a notify-me email capture form instead of store badges
 - The download section has a mailto CTA (`hello@zayvori.com`) rather than a form — the site is hosted on GitHub Pages with no backend
-- When the app launches, revert the eyebrow/CTAs and replace the mailto button with real App Store / Google Play badge links
+- Initial launch is Android only (no Apple Developer account yet); iOS comes later
+- When the app launches, revert the eyebrow/CTAs and replace the mailto button with a Google Play badge link; add the App Store badge once iOS is available
 
 ## Deployment
 
