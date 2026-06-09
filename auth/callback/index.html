@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zayvori — Confirming your account</title>
+  <link rel="icon" type="image/png" href="/assets/zayvori_icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAF2E9;
+      color: #4A033B;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .logo { height: 64px; margin-bottom: 2rem; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #6b4a62;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #E2725B;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.75rem 1.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.88; }
+    .note {
+      font-size: 0.85rem;
+      color: #9c7a92;
+      margin-top: 1rem;
+    }
+    #desktop-msg { display: none; }
+  </style>
+</head>
+<body>
+  <img src="/assets/zayvori_logo.png" alt="Zayvori" class="logo" />
+
+  <div id="opening-msg">
+    <h1>Opening Zayvori&hellip;</h1>
+    <p>Confirming your account — the app should open automatically.</p>
+  </div>
+
+  <div id="desktop-msg">
+    <h1>Almost there</h1>
+    <p>
+      Your account is confirmed. To finish signing in, open this link on the
+      device where you installed Zayvori, or simply open the app and sign in.
+    </p>
+    <a href="/" class="btn">Back to zayvori.com</a>
+    <p class="note">The confirmation link can only be used once.</p>
+  </div>
+
+  <script>
+    (function () {
+      var search = window.location.search;
+      var deepLink = 'zayvori://auth/callback' + search;
+
+      // Attempt to open the app
+      window.location.href = deepLink;
+
+      // After a short delay, if we're still here the device didn't open the app.
+      // On mobile the page stays alive in the background; on desktop nothing happens.
+      // Show the desktop message either way so the user isn't stuck on a blank page.
+      setTimeout(function () {
+        document.getElementById('opening-msg').style.display = 'none';
+        document.getElementById('desktop-msg').style.display = 'block';
+      }, 2500);
+    })();
+  </script>
+</body>
+</html>
