@@ -64,11 +64,18 @@
     <p>Confirming your account — the app should open automatically.</p>
   </div>
 
-  <div id="desktop-msg">
+  <!-- Shown when Supabase sends an informational message (e.g. "check your new email") -->
+  <div id="message-msg" style="display:none">
+    <h1>Almost there</h1>
+    <p id="message-text"></p>
+    <a href="/" class="btn">Back to zayvori.com</a>
+  </div>
+
+  <div id="desktop-msg" style="display:none">
     <h1>Almost there</h1>
     <p>
-      Your account is confirmed. To finish signing in, open this link on the
-      device where you installed Zayvori, or simply open the app and sign in.
+      Your account is confirmed. To finish, open Zayvori on your phone, or
+      simply open the app and sign in.
     </p>
     <a href="/" class="btn">Back to zayvori.com</a>
     <p class="note">The confirmation link can only be used once.</p>
@@ -77,14 +84,26 @@
   <script>
     (function () {
       var search = window.location.search;
-      var deepLink = 'zayvori://auth/callback' + search;
+      var hash = window.location.hash;
 
-      // Attempt to open the app
+      // Supabase email-change "old email" step: redirects here with
+      // #message=...&sb= rather than a code. Show the message and stop.
+      if (hash && hash.indexOf('message=') !== -1) {
+        var params = new URLSearchParams(hash.slice(1));
+        var msg = params.get('message');
+        document.getElementById('opening-msg').style.display = 'none';
+        document.getElementById('message-msg').style.display = 'block';
+        document.getElementById('message-text').textContent =
+          msg || 'Confirmation received. Check your new email address for the next step.';
+        return;
+      }
+
+      // For all other cases (signup code, email-change new-email code, token hash)
+      // forward everything to the app deep link so the app can handle it.
+      var deepLink = 'zayvori://auth/callback' + search + hash;
       window.location.href = deepLink;
 
       // After a short delay, if we're still here the device didn't open the app.
-      // On mobile the page stays alive in the background; on desktop nothing happens.
-      // Show the desktop message either way so the user isn't stuck on a blank page.
       setTimeout(function () {
         document.getElementById('opening-msg').style.display = 'none';
         document.getElementById('desktop-msg').style.display = 'block';
