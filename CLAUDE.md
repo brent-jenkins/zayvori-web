@@ -62,7 +62,7 @@ The companion app (`zayvori-app`) is an Expo/React Native recipe app. Accurate f
 - **Create recipes manually** — title, ingredients, steps, photo
 - **My Recipes tab** — all recipes the user has created or saved
 - **Collections** — named groups of recipes (e.g. "Weeknight Dinners", "Baking")
-- **Search tab** — browse and search recipes shared by other Zayvori users (community discovery)
+- **Search tab** — browse and search recipes shared by other Zayvori users (community discovery); imported recipes are private to the importing user and do not appear in Search
 - **Like recipes** — heart community recipes; liked recipes appear in a dedicated Liked tab
 - **Personal notes** — private per-recipe notes, synced via Supabase
 - **Offline support** — failed saves queue locally and sync on reconnect
