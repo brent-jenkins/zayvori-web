@@ -28,6 +28,31 @@ Static marketing and legal website for the Zayvori recipe app. No build step —
 
 Fonts: `Playfair Display` (headings) and `Inter` (body), loaded from Google Fonts.
 
+## Brand voice & philosophy
+
+Zayvori is a **calm, welcoming alternative to social media** for people who love food. All recipes are public and shared freely — like sitting around one long table where everyone brings something they love.
+
+**Core tone:** Calm, warm, inclusive, simple. Focus on enjoyment, not performance.
+
+**Prefer language like:**
+- "save what you like", "discover recipes", "share freely"
+- "enjoy cooking", "for yourself and your loved ones"
+- "calm", "welcoming", "quiet"
+
+**Avoid language like:**
+- "followers", "engagement", "build your audience", "go viral", "top creators"
+- any comparison, ranking, or performance language
+- "results", "metrics", "grow"
+
+**What Zayvori intentionally does NOT have:**
+- Follows or follower counts
+- Public profiles or usernames
+- Comment sections
+- Visible like counts or popularity metrics
+- An algorithm ranking content
+
+If a proposed feature or wording contradicts this philosophy, flag it for review rather than implementing it directly.
+
 ## App capabilities (keep website copy aligned with these)
 
 The companion app (`zayvori-app`) is an Expo/React Native recipe app. Accurate feature set:
