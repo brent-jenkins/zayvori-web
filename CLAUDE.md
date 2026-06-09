@@ -15,6 +15,7 @@ Static marketing and legal website for the Zayvori recipe app. No build step —
 | `styles.css` | All styles — BEM-ish classes, CSS custom properties for brand tokens |
 | `script.js` | Mobile nav toggle and scroll fade-in animations |
 | `CNAME` | Custom domain: `zayvori.com` |
+| `auth/callback/index.html` | Deep-link bridge for Supabase email confirmations — redirects `zayvori.com/auth/callback?code=xxx` to the `zayvori://` app scheme; shows a friendly message for `#message=...` responses (email-change old-address step) and a "open on your phone" fallback on desktop |
 | `assets/` | Images: `zayvori_logo.png`, `zayvori_icon.png`, `screenshot.png` |
 
 ## Brand tokens (styles.css)
