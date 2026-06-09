@@ -54,6 +54,14 @@ Features that do NOT exist (do not add to marketing copy):
 
 `privacy.html` and `terms.html` still contain `[Your Legal Entity Name]`, `[Registered Address]`, and `[Your State]` placeholders. Do not remove these — they need to be filled in by the owner before publishing changes.
 
+## Coming-soon state
+
+The app is not yet publicly available. `index.html` is in "coming soon" mode:
+- Hero eyebrow shows "Coming Soon", CTAs say "Notify Me at Launch"
+- The download section has a notify-me email capture form instead of store badges
+- The download section has a mailto CTA (`hello@zayvori.com`) rather than a form — the site is hosted on GitHub Pages with no backend
+- When the app launches, revert the eyebrow/CTAs and replace the mailto button with real App Store / Google Play badge links
+
 ## Deployment
 
 Hosted on GitHub Pages. Push to `main` deploys automatically via the `CNAME` record.
