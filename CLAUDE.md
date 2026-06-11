@@ -85,14 +85,21 @@ Features that do NOT exist (do not add to marketing copy):
 
 ## Launch state
 
-The app is live on Google Play. `index.html` reflects the live state:
-- Hero eyebrow: "Now on Android"; primary CTA links to the Play Store
-- Nav button: "Get the App" → links to `#download`
-- Download section: Google Play store badge (`com.zayvori.app`)
-- Testimonials section removed (was fictional placeholder copy)
-- iOS is not yet available (no Apple Developer account); add the App Store badge once live
+The app is in **closed alpha** on Android — not yet publicly available. `index.html` reflects this:
+- Hero eyebrow: "Early Access — Android"; primary CTA "Become a Tester" links to the Google Play testing opt-in page
+- Nav button: "Join the Beta" → links to `#download`
+- Download section: "Help shape Zayvori" heading; Google Play badge links to the testing opt-in page
 
-Play Store URL: `https://play.google.com/store/apps/details?id=com.zayvori.app`
+Testing opt-in URL: `https://play.google.com/apps/testing/com.zayvori.app`
+
+When the app moves to open / public release, update:
+- Hero eyebrow → "Now on Android"
+- Hero CTA → "Get it on Google Play" linking to `https://play.google.com/store/apps/details?id=com.zayvori.app`
+- Nav button → "Get the App"
+- Download h2 → "Now available on Android"
+- Download p → "A calm, personal space for every recipe you love. Free to download, free to use — your collection, your way."
+- Both badge links → the Play Store URL above
+- iOS is not yet available (no Apple Developer account); add the App Store badge once live
 
 ## Deployment
 
