@@ -1,3 +1,40 @@
+// Cookie consent
+(function () {
+  var CONSENT_KEY = 'zayvori_cookie_consent';
+  var stored = localStorage.getItem(CONSENT_KEY);
+
+  if (stored === 'granted') {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    return;
+  }
+  if (stored === 'denied') return;
+
+  // No stored preference — show banner
+  var banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', 'Cookie consent');
+  banner.innerHTML =
+    '<p class="cookie-banner__text">We use analytics cookies to understand how visitors use this site. ' +
+    '<a href="/privacy.html#cookies">Privacy Policy</a></p>' +
+    '<div class="cookie-banner__actions">' +
+    '<button class="cookie-banner__btn cookie-banner__btn--ghost" id="cookie-decline">Decline</button>' +
+    '<button class="cookie-banner__btn cookie-banner__btn--primary" id="cookie-accept">Accept</button>' +
+    '</div>';
+  document.body.appendChild(banner);
+  requestAnimationFrame(function () { banner.classList.add('visible'); });
+
+  function dismiss(consent) {
+    localStorage.setItem(CONSENT_KEY, consent);
+    if (consent === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' });
+    banner.classList.remove('visible');
+    setTimeout(function () { banner.remove(); }, 300);
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', function () { dismiss('granted'); });
+  document.getElementById('cookie-decline').addEventListener('click', function () { dismiss('denied'); });
+})();
+
 // Mobile nav toggle
 const hamburger = document.querySelector('.nav__hamburger');
 const navLinks = document.querySelector('.nav__links');
